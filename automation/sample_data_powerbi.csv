@@ -1,0 +1,8 @@
+Date,Key,Key type,Is documented,Desktop Key Count,Desktop unq url count,Desktop Url Checked,Desktop found in unq %,Mobile key count,Mobile unq url count,Mobile Url Checked,Mobile found in unq %
+04-Oct-2025,3rt,param,No,2,2,291633,0.00%,0,0,431250,0.00%
+04-Oct-2025,app,param,No,0,0,291633,0.00%,2312,2312,431250,0.54%
+04-Oct-2025,biz,param,Yes,10079,10079,291633,3.46%,47269,47232,431250,10.96%
+04-Oct-2025,biz,tag,Yes,14073,14073,291633,4.83%,12304,12304,431250,2.85%
+04-Oct-2025,c_src,param,Yes,15320,15320,291633,5.25%,0,0,431250,0.00%
+04-Oct-2025,cat,tag,Yes,287360,287360,291633,98.53%,385456,385456,431250,89.38%
+04-Oct-2025,catid,param,Yes,291311,291311,291633,99.89%,211514,207448,431250,49.05%
