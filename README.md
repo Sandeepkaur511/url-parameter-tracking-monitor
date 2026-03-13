@@ -1,55 +1,149 @@
-# URL Parameter Tracking Monitor
+# URL Tracking Observability System
 
 ## Overview
 
-This project demonstrates an automated system for monitoring URL parameter tracking across large volumes of web traffic.
+This project demonstrates an automated observability system for monitoring URL parameter tracking in large-scale web analytics data.
 
-The system parses raw URLs, extracts parameter key-value pairs, analyzes their frequency, and detects anomalies in tracking coverage using statistical monitoring.
+The system parses raw URLs, extracts parameter keys, measures tracking coverage, and detects anomalies in parameter behavior using statistical monitoring.
 
-Alerts are automatically sent to stakeholders when abnormal tracking patterns are detected.
+Alerts are automatically triggered when tracking patterns deviate from expected baselines.
 
 ---
 
-## Business Problem
+## Problem
 
-Web analytics and marketing attribution depend heavily on URL parameters.
+Modern analytics systems depend heavily on URL parameters for:
 
-However, several issues can occur:
+• campaign attribution
+• search tracking
+• product discovery
+• marketing analytics
 
-• missing tracking parameters  
-• incorrect parameter implementation  
-• unexpected drops in parameter usage  
-• tracking breaks after product releases  
+However, tracking can break due to:
 
-Without monitoring, these issues can remain undetected and lead to inaccurate analytics.
+• missing parameters
+• frontend implementation changes
+• release-related bugs
+• inconsistent tagging practices
+
+Without monitoring, these issues may remain undetected and lead to inaccurate reporting.
 
 ---
 
 ## Solution
 
-The system continuously analyzes URL logs to monitor parameter usage patterns.
+The system continuously monitors URL parameters extracted from raw web logs.
 
-Key steps include:
+Pipeline steps:
 
-1. Parsing raw URLs into key-value parameter pairs
-2. Aggregating parameter occurrence metrics
-3. Monitoring deviations in parameter coverage
-4. Automatically triggering alerts when anomalies occur
+1. Parse URLs into parameter key-value pairs
+2. Classify parameters as tags or query parameters
+3. Calculate parameter coverage metrics
+4. Detect anomalies using statistical thresholds
+5. Automatically notify stakeholders
 
 ---
 
-## System Architecture
+## Architecture
 
-Raw URL Logs (SQL Warehouse)
-        ↓
-Power BI (URL Parsing using M Code)
-        ↓
-Parameter Aggregation Model
-        ↓
-Power BI Service Auto Refresh (T-1 Data)
-        ↓
-Power Automate Scheduled Flow
-        ↓
-Excel Online Alert Processing
-        ↓
+Data Warehouse (Raw URLs)
+↓
+Power BI Power Query (URL Parsing Engine)
+↓
+Parameter Coverage Metrics
+↓
+Power BI Service Scheduled Refresh
+↓
+Power Automate Monitoring Flow
+↓
+Excel Alert Engine
+↓
 Automated Email Alerts
+
+---
+
+## Parameter Parsing Logic
+
+URLs are decomposed into parameter keys.
+
+Example URL:
+
+/search?q=laptop&source=google&tags=cat:electronics|brand:hp
+
+Extracted parameters:
+
+| Key    | Type  |
+| ------ | ----- |
+| q      | param |
+| source | param |
+| cat    | tag   |
+| brand  | tag   |
+
+---
+
+## Monitoring Metrics
+
+The system tracks:
+
+• parameter frequency
+• URL coverage percentage
+• desktop vs mobile parameter usage
+• undocumented parameter appearance
+
+Example monitoring table:
+
+| Key | Key Type | Desktop Count | Mobile Count | Coverage % |
+| --- | -------- | ------------- | ------------ | ---------- |
+
+---
+
+## Anomaly Detection
+
+Parameter coverage is monitored using a rolling baseline model.
+
+Baseline = Median(last 5 same weekday values)
+
+Spread = MAD × 1.4826
+
+Upper Limit = Baseline + 2.5 × Spread
+Lower Limit = Baseline − 2.5 × Spread
+
+If coverage falls outside this range → anomaly detected.
+
+---
+
+## Alert Severity
+
+Critical ≥ 35%
+Major ≥ 25%
+Minor ≥ 15%
+
+Alerts are automatically emailed to stakeholders with affected parameters.
+
+---
+
+## Tech Stack
+
+SQL
+Power BI
+Power Query (M)
+Power Automate
+Excel Online
+Email Automation
+
+---
+
+## Impact
+
+• Detects broken tracking implementations early
+• Prevents inaccurate analytics reporting
+• Identifies tracking regressions after product releases
+• Enables proactive analytics monitoring
+
+---
+
+## Future Improvements
+
+• automated root cause detection
+• tracking health dashboard
+• LLM-based anomaly explanation
