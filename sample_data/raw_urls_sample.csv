@@ -1,0 +1,31 @@
+## Sample Dataset
+
+The repository includes a synthetic dataset of search and product URLs
+that simulate real web analytics traffic.
+
+The dataset contains:
+- search URLs
+- product detail URLs
+- query parameters
+- tag parameters
+
+This dataset is used to demonstrate the URL parsing logic implemented
+in Power BI Power Query.
+
+search_web_date,page_location
+2026-01-12,https://example.com/search?q=industrial+printer&city=gurugram&src=pdp_rc&tags=res:RC2|cat:169|mc:155550|lang:en|gc:delhi
+2026-01-12,https://example.com/search?q=chequered+plate&city=faridabad&src=city_search&tags=res:RC3|cat:95|mc:139977|lang:en|gc:faridabad
+2026-01-12,https://example.com/product/manual-brick-machine?pos=1&kwd=brick+machine&tags=rk:A|plc:1|cat:151|mc:5385|lang:en
+2026-01-12,https://example.com/search?q=rfid+scanner&city=coimbatore&src=global_search&tags=res:RC2|cat:740|mc:18608|lang:en
+2026-01-12,https://example.com/product/outdoor-louvers?pos=2&kwd=steel+louvers&tags=rk:B|plc:1|cat:816|mc:68020|lang:en
+2026-01-12,https://example.com/search?q=car+mats&src=popular_search&tags=res:RC3|cat:30|mc:23372|lang:en|gc:delhi
+2026-01-12,https://example.com/search?q=shim+pins&city=rohtak&tags=res:RC2|cat:788|mc:136177|lang:en
+2026-01-12,https://example.com/search?q=silk+sarees&city=pune&src=recent_search&tags=res:RC2|cat:224|mc:148416|lang:en
+2026-01-12,https://example.com/search?q=radix+solutions&city=lucknow&tags=res:RC1|cat:384|mc:214214|lang:en
+2026-01-12,https://example.com/search?q=wireless+mouse&city=patna&tags=res:RC2|cat:56|mc:20197|lang:en
+2025-08-06,https://example.com/search?q=resin+lotus&city=chennai&tags=res:RC4|cat:229|mc:185195|lang:en
+2025-08-06,https://example.com/search?q=kids+costume&city=chennai&tags=res:RC2|cat:106|mc:85171|lang:hi
+2025-08-06,https://example.com/search?q=xray+machine&city=coimbatore&tags=res:RC3|cat:577|mc:42773|lang:en
+2025-08-06,https://example.com/search?q=packing+boxes&city=chennai&tags=res:RC5|cat:561|mc:1993|lang:en
+2025-08-06,https://example.com/search?q=nike+shoes&city=bengaluru&tags=res:RC2|cat:714|mc:184123|lang:en
+2025-08-06,https://example.com/search?q=gift+items&city=jaipur&tags=res:RC4|cat:118|mc:29411|lang:en
